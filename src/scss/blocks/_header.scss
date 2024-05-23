@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+
+    width: 100%;
+    max-width: 1326px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    .header__logo {
+        padding: 20px;
+        font-weight: bold;
+        font-size: 35px;
+        color: black;
+
+        span {
+            color: #ee26c2;
+        }
+    }
+
+    .header__user-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__user-info-info {
+        display: flex;
+        width: 100px;
+        height: 40px;
+        align-items: center;
+        margin-right: 24px;
+
+        .header__user-info-info-logo {
+            padding: 7px;
+            width: 40px;
+            height: 40px;
+            background-color: #ee26c2;
+            border-radius: 100%;
+            margin-right: 8px;
+        }
+
+        .header__user-info-info-percent {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+
+    .header__user-info-name {
+        display: flex;
+        align-items: center;
+
+        .header__user-info-name-logo {
+            padding: 7px;
+            width: 40px;
+            height: 40px;
+            background-color: #ee26c2;
+            border-radius: 100%;
+            margin-right: 8px;
+        }
+
+        .header__user-info-name-email {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+
+    .header__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100px;
+
+        .header__button {
+            padding: 7px;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 100%;
+        }
+    }
+
+}
