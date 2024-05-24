@@ -93,6 +93,7 @@ legend {
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  font-family: Inter;
   width: 100%;
   max-width: 1326px;
   padding: 0 15px;
@@ -168,6 +169,7 @@ legend {
 .main .main__content {
   display: flex;
   margin-bottom: 60px;
+  font-family: Inter;
 }
 .main .main__content__files {
   width: 100%;
@@ -177,6 +179,60 @@ legend {
   border-radius: 20px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   margin-right: 30px;
+}
+.main .main__content__files .main__content__files__list-media-stillText {
+  display: none;
+  color: #EE26C2;
+  font-size: 15px;
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.main .main__content__files .main__content__files__list-report-stillText {
+  display: none;
+  color: #EE26C2;
+  font-size: 15px;
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.main .main__content__files .main__content__files__list-media {
+  display: none;
+  height: 296px;
+  overflow: hidden;
+}
+.main .main__content__files .main__content__files__list-media .main__content__files__list__list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.main .main__content__files .main__content__files__list-media .main__content__files__list__list h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.main .main__content__files .main__content__files__list-media .main__content__files__list__list button {
+  transform: rotateX(180deg);
+}
+.main .main__content__files .main__content__files__list-report {
+  display: none;
+  height: 246px;
+  overflow: hidden;
+}
+.main .main__content__files .main__content__files__list-report .main__content__files__list__list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.main .main__content__files .main__content__files__list-report .main__content__files__list__list h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.main .main__content__files .main__content__files__list-report .main__content__files__list__list button {
+  transform: rotateX(180deg);
 }
 .main .main__content__files .main__content__files__title {
   padding-left: 20px;
@@ -234,7 +290,11 @@ legend {
   background-color: #F5F5F5;
   border-radius: 100%;
 }
-.main .main__content__office .main__content__office-chat {
+.main .main__content__office .main__content__office__chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 818px;
   height: 596px;
@@ -242,10 +302,111 @@ legend {
   border-radius: 20px;
   margin: 0 auto;
 }
+.main .main__content__office .main__content__office__chat .main__content__office__chat-logo {
+  padding-top: 50px;
+  margin-bottom: 20px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-text {
+  font-family: Inter;
+  width: 100%;
+  max-width: 470px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 57px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-btns {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn {
+  font-family: Inter;
+  padding: 12px 22px;
+  border-radius: 21px;
+  font-weight: 600;
+  color: #fff;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn.purple {
+  margin-right: 12px;
+  margin-left: 20px;
+  background-color: #EE26C2;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn.blue {
+  background-color: #2676EE;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner {
+  width: 100%;
+  max-width: 819px;
+  height: 150px;
+  background-color: #fff;
+  border: 2px solid #F5F5F5;
+  border-radius: 20px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 25px 20px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input-btns .main__content__office__chat__inner-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input-btns .main__content__office__chat__inner-btn button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #EE26C2;
+  margin-bottom: 2px;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat__inner .main__content__office__chat__inner-input-btns .main__content__office__chat__inner-btn span {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.mediaPlan__item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 253px;
+  height: 42px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-left: 20px;
+}
+.mediaPlan__item .mediaPlan__item-text {
+  font-size: 15px;
+  font-weight: 400;
+}
+.mediaPlan__item .mediaPlan__item-xmlLogo {
+  width: 24px;
+  height: 24px;
+  margin-left: 9px;
+}
+.mediaPlan__item .mediaPlan__item-button {
+  height: 100%;
+  width: 42px;
+  background-color: #F4D4ED;
+  border-radius: 4px;
+}
 
 .footer {
   background-color: #EBEBEB;
   margin-top: auto;
+  font-family: Inter;
 }
 .footer .footer__container {
   display: flex;
@@ -299,4 +460,17 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #B5B5B5;
+  border-radius: 20px;
 }/*# sourceMappingURL=main.css.map */
