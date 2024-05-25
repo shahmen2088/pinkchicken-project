@@ -16,9 +16,9 @@ a, a:link, a:visited {
   text-decoration: none;
 }
 
-a.text:active,
-a.text:hover,
-a.text {
+a:active,
+a:hover,
+a {
   text-decoration: none;
   color: #000;
 }
@@ -93,20 +93,13 @@ legend {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  font-family: Inter;
   width: 100%;
-  max-width: 1326px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
 }
-.header .header__logo {
-  padding: 20px;
-  font-weight: bold;
-  font-size: 35px;
-  color: black;
-}
-.header .header__logo span {
-  color: #ee26c2;
+.header .header__user__nav {
+  display: flex;
 }
 .header .header__user-info {
   display: flex;
@@ -134,13 +127,11 @@ legend {
 .header .header__user-info-name {
   display: flex;
   align-items: center;
+  margin-right: 26px;
 }
-.header .header__user-info-name .header__user-info-name-logo {
-  padding: 7px;
+.header .header__user-info-name .header__user-info-name-info-person {
   width: 40px;
   height: 40px;
-  background-color: #ee26c2;
-  border-radius: 100%;
   margin-right: 8px;
 }
 .header .header__user-info-name .header__user-info-name-email {
@@ -153,11 +144,8 @@ legend {
   width: 100px;
 }
 .header .header__buttons .header__button {
-  padding: 7px;
   width: 40px;
   height: 40px;
-  background-color: #fff;
-  border-radius: 100%;
 }
 
 .main {
@@ -168,8 +156,8 @@ legend {
 }
 .main .main__content {
   display: flex;
+  justify-content: center;
   margin-bottom: 60px;
-  font-family: Inter;
 }
 .main .main__content__files {
   width: 100%;
@@ -276,6 +264,7 @@ legend {
 .main .main__content__office .main__content__office-info .main__content__office-info-inner {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-name {
   color: #525252;
@@ -286,17 +275,40 @@ legend {
   font-weight: 600;
   color: black;
 }
-.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btn {
+.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btns {
+  display: flex;
+  flex-direction: column;
+}
+.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btns .main__content__office-info-inner-btn {
   width: 40px;
   height: 40px;
   background-color: #F5F5F5;
   border-radius: 100%;
 }
+.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btns .main__content__office-info-inner-btns-open {
+  visibility: hidden;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px 30px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100%;
+  max-width: 332px;
+  height: 82px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btns .main__content__office-info-inner-btns-open .main__content__office-info-inner-btns-open-item {
+  margin-bottom: 12px;
+  text-align: end;
+}
+.main .main__content__office .main__content__office-info .main__content__office-info-inner .main__content__office-info-inner-btns .main__content__office-info-inner-btns-open .main__content__office-info-inner-btns-open-item:hover {
+  color: #EE26C2;
+}
 .main .main__content__office .main__content__office__chat {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: 818px;
   height: 596px;
@@ -304,11 +316,18 @@ legend {
   border-radius: 20px;
   margin: 0 auto;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-logo {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-logo {
   padding-top: 50px;
   margin-bottom: 20px;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-text {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-text {
   font-family: Inter;
   width: 100%;
   max-width: 470px;
@@ -317,23 +336,24 @@ legend {
   font-weight: 500;
   margin-bottom: 57px;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-btns {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-btns {
+  position: sticky;
   width: 100%;
   margin-bottom: 20px;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-btns .main__content__office__chat-btn {
   font-family: Inter;
   padding: 12px 22px;
   border-radius: 21px;
   font-weight: 600;
   color: #fff;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn.purple {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-btns .main__content__office__chat-btn.purple {
   margin-right: 12px;
   margin-left: 20px;
   background-color: #EE26C2;
 }
-.main .main__content__office .main__content__office__chat .main__content__office__chat-btns .main__content__office__chat-btn.blue {
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-btns .main__content__office__chat-btn.blue {
   background-color: #2676EE;
 }
 .main .main__content__office .main__content__office__chat .main__content__office__chat__inner {
@@ -427,7 +447,7 @@ legend {
 .footer .footer__container {
   display: flex;
   width: 100%;
-  max-width: 1326px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
   justify-content: space-between;
@@ -443,6 +463,9 @@ legend {
 .footer .footer__menu {
   display: flex;
 }
+.footer .footer__menu a:hover {
+  color: #EE26C2;
+}
 .footer .footer__menu .footer__menu-item {
   display: flex;
   align-items: center;
@@ -457,18 +480,17 @@ legend {
 .footer .footer__menu .footer__menu-item .footer__menu-inner .footer__menu-inner-item {
   margin-right: 12px;
 }
+.footer .footer__menu .footer__menu-item .footer__menu-inner .footer__menu-inner-item.selected a {
+  color: #EE26C2;
+}
 .footer .footer__social-icons {
   display: flex;
   font-size: 35px;
+  a-width: 40px;
+  a-height: 40px;
 }
 .footer .footer__social-icons .footer__social-icon {
   margin-right: 12px;
-}
-.footer .footer__social-icons .footer__social-iconblue {
-  background-color: #2AABEE;
-}
-.footer .footer__social-icons .footer__social-icongreen i {
-  background-color: #20B038;
 }
 
 body {
@@ -476,6 +498,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
+  font-family: Inter;
 }
 
 *::-webkit-scrollbar {
@@ -489,4 +512,8 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #B5B5B5;
   border-radius: 20px;
+}
+
+*::-webkit-scrollbar {
+  height: 0.2%;
 }/*# sourceMappingURL=main.css.map */

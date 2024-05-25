@@ -3,22 +3,14 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    font-family: Inter;
 
     width: 100%;
-    max-width: 1326px;
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
 
-    .header__logo {
-        padding: 20px;
-        font-weight: bold;
-        font-size: 35px;
-        color: black;
-
-        span {
-            color: #ee26c2;
-        }
+    .header__user__nav {
+        display: flex;
     }
 
     .header__user-info {
@@ -42,6 +34,8 @@
             margin-right: 8px;
         }
 
+        
+
         .header__user-info-info-percent {
             font-weight: 600;
             font-size: 18px;
@@ -51,13 +45,11 @@
     .header__user-info-name {
         display: flex;
         align-items: center;
+        margin-right: 26px;
 
-        .header__user-info-name-logo {
-            padding: 7px;
+        .header__user-info-name-info-person {
             width: 40px;
             height: 40px;
-            background-color: #ee26c2;
-            border-radius: 100%;
             margin-right: 8px;
         }
 
@@ -73,11 +65,11 @@
         width: 100px;
 
         .header__button {
-            padding: 7px;
+            
             width: 40px;
             height: 40px;
-            background-color: #fff;
-            border-radius: 100%;
+           
+           
         }
     }
 

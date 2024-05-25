@@ -6,8 +6,8 @@
 
     .main__content {
         display: flex;
+        justify-content: center;
         margin-bottom: 60px;
-        font-family: Inter;
     }
 
     .main__content__files {
@@ -130,6 +130,8 @@
             .main__content__office-info-inner {
                 display: flex;
                 align-items: center;
+                position: relative;
+
 
                 .main__content__office-info-inner-name {
                     color: #525252;
@@ -141,21 +143,49 @@
                         color: black;
                     }
                 }
+                .main__content__office-info-inner-btns {
+                    display: flex;
+                    flex-direction: column;
+                    .main__content__office-info-inner-btn {
+                        width: 40px;
+                        height: 40px;
+                        background-color: #F5F5F5;
+                        border-radius: 100%;
+                    }
+                    .main__content__office-info-inner-btns-open {
+                        visibility: hidden;
+                        flex-direction: column;
+                        border-radius: 8px;
+                        padding: 16px 30px;
+                        position: absolute;
+                        top: 50px;
+                        left: 50px;
+                        width: 100%;
+                        max-width: 332px;
+                        height: 82px;
+                        background-color: #fff;
+                        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-                .main__content__office-info-inner-btn {
-                    width: 40px;
-                    height: 40px;
-                    background-color: #F5F5F5;
-                    border-radius: 100%;
+                        .main__content__office-info-inner-btns-open-item {
+                            margin-bottom: 12px;
+                            text-align: end;
+                            &:hover {
+                                color: #EE26C2;
+                            }
+                        }
+
+                    }
                 }
+
+                
             }
         }
 
         .main__content__office__chat {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            // align-items: center;
+            // justify-content: center;
 
             width: 100%;
             max-width: 818px;
@@ -164,43 +194,55 @@
             border-radius: 20px;
             margin: 0 auto;
 
-            .main__content__office__chat-logo {
-                padding-top: 50px;
-                margin-bottom: 20px;
-            }
-
-            .main__content__office__chat-text {
-                font-family: Inter;
-                width: 100%;
-                max-width: 470px;
-                text-align: center;
-                font-size: 16px;
-                font-weight: 500;
-                margin-bottom: 57px;
-            }
-
-            .main__content__office__chat-btns {
-                width: 100%;
-                margin-bottom: 20px;
-
-                .main__content__office__chat-btn {
+            .main__content__office__chat-inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                .main__content__office__chat-logo {
+                    padding-top: 50px;
+                    margin-bottom: 20px;
+                }
+    
+                .main__content__office__chat-text {
                     font-family: Inter;
-                    padding: 12px 22px;
-                    border-radius: 21px;
-                    font-weight: 600;
-                    color: #fff;
+                    width: 100%;
+                    max-width: 470px;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 57px;
+                }
+                .main__content__office__chat-btns {
+                    position: sticky;
+                    width: 100%;
+                    margin-bottom: 20px;
+    
+                    .main__content__office__chat-btn {
+                        font-family: Inter;
+                        padding: 12px 22px;
+                        border-radius: 21px;
+                        font-weight: 600;
+                        color: #fff;
+                    }
+    
+                    .main__content__office__chat-btn.purple {
+                        margin-right: 12px;
+                        margin-left: 20px;
+                        background-color: #EE26C2;
+                    }
+    
+                    .main__content__office__chat-btn.blue {
+                        background-color: #2676EE;
+                    }
                 }
 
-                .main__content__office__chat-btn.purple {
-                    margin-right: 12px;
-                    margin-left: 20px;
-                    background-color: #EE26C2;
-                }
-
-                .main__content__office__chat-btn.blue {
-                    background-color: #2676EE;
-                }
             }
+
+           
+
+           
 
             .main__content__office__chat__inner {
                 width: 100%;

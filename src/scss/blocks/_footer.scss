@@ -6,7 +6,7 @@
     .footer__container {
         display: flex;
         width: 100%;
-        max-width: 1326px;
+        max-width: 1200px;
         padding: 0 15px;
         margin: 0 auto;
         justify-content: space-between;
@@ -25,6 +25,10 @@
     .footer__menu {
         display: flex;
 
+        a:hover {
+            color: #EE26C2;
+        }
+
         .footer__menu-item {
             display: flex;
             align-items: center;
@@ -40,8 +44,12 @@
 
                 .footer__menu-inner-item {
                     margin-right: 12px;
-                }
 
+
+                }
+                .footer__menu-inner-item.selected a{
+                    color: #EE26C2;
+                }
             }
         }
 
@@ -51,16 +59,14 @@
         display: flex;
         font-size: 35px;
 
+        a: {
+            width: 40px;
+            height: 40px;
+        }
+           
+
         .footer__social-icon {
             margin-right: 12px;
-
-            &blue {
-                background-color: #2AABEE;
-            }
-
-            &green i {
-                background-color: #20B038;
-            }
         }
     }
 
