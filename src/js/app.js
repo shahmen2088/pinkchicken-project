@@ -17,10 +17,10 @@ function createItemForList() {
     </svg>`;
     button.className = 'mediaPlan__item-button';
     button.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-    <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>`;
+    <path d="M14.55 21.67C18.84 20.54 22 16.64 22 12C22 6.48 17.56 2 12 2C5.33 2 2 7.56 2 7.56M2 7.56V3M2 7.56H4.01H6.44" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 12C2 17.52 6.48 22 12 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+    </svg>
+    `;
     div.append(xmlSvg)
     div.append(paragraph)
     div.append(button)
@@ -43,20 +43,43 @@ let text = document.querySelector('#main__content__files__description');
 
 function requestMediaPlan() {
     let stillText = document.querySelector('#media__inner-still');
+    let media = document.querySelector('#media__inner');
     text.style.display = 'none';
     logo.style.display = 'none';
-    document.querySelector('#media').style.display = "block";
+    document.querySelector('#media').style.display = 'block';
     let mediaList = document.querySelector('#media__inner-list');
+    let specText = document.createElement('div');
+    specText.innerHTML = `<span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.26136 10.2727L8.34659 4H7.1875L7.27273 10.2727H8.26136ZM7.22585 12.5696C7.37642 12.7202 7.55682 12.7955 7.76705 12.7955C7.90909 12.7955 8.03693 12.7614 8.15057 12.6932C8.26705 12.6222 8.35938 12.5284 8.42756 12.4119C8.49858 12.2955 8.53409 12.1676 8.53409 12.0284C8.53409 11.8182 8.45881 11.6378 8.30824 11.4872C8.15767 11.3366 7.97727 11.2614 7.76705 11.2614C7.55682 11.2614 7.37642 11.3366 7.22585 11.4872C7.07528 11.6378 7 11.8182 7 12.0284C7 12.2386 7.07528 12.419 7.22585 12.5696Z" fill="#949494"/>
+    </svg>
+    </span>Медиаплан в процессе составления`;
+    specText.className = 'spec__text';
     mediaList.appendChild(createItemForList());
+    mediaList.appendChild(specText);
     let arr = Array.from(mediaList.children);
-    if (arr.length > 5) {
-        stillText.style.display = 'block';
+    for(let mediaListItem of arr) {
+        setTimeout(() => {
+            mediaListItem.children[2].innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        `;
+        mediaListItem.children[2].style.backgroundColor = '#F4D4ED' 
+        specText.style.display = 'none';
+
+        }, 5000)
     }
+    if (arr.length > 5 && media.style.overflow !== 'scroll') {
+        stillText.style.display = 'block';
+    } else {
+        stillText.style.display = 'none';
+    }
+    document.querySelector('#media').style.display = "block";
 }
 
 function requestReport() {
     let stillText = document.querySelector('#report__inner-still');
-
     text.style.display = 'none';
     logo.style.display = 'none';
     document.querySelector('#report').style.display = "block";
@@ -71,15 +94,32 @@ function requestReport() {
 function showMoreReports () {
     let stillText = document.querySelector('#report__inner-still');
     let report = document.querySelector('#report');
-    report.style.overflow = 'scroll';
+    let otherReport = document.querySelector('#report__inner-list');
+
+    otherReport .style.overflow = 'scroll';
 
     stillText.style.display = 'none';
 }
 
 function showMoreMediaPlans () {
-    let stillText = document.querySelector('#report__inner-still');
-    let media = document.querySelector('#media');
-    media.style.overflow = 'scroll';
-    media.style.scrollWidth = 'thin';
+    let stillText = document.querySelector('#media__inner-still');
+    let media = document.querySelector('#media__inner');
     stillText.style.display = 'none';
+    media.style.overflow = 'scroll';
+}
+
+
+function closeMoreMediaPlans () {
+    let media = document.querySelector('#media__inner');
+    let btn = document.querySelector("#media__open-btn");
+    if(btn.style.transform === '') {
+        btn.style.transform = "rotateX(180deg)";
+    } else {
+        btn.style.transform = "";
+    }
+    if(media.style.display === 'none') {
+        media.style.display = 'block';
+    } else {
+        media.style.display = 'none';
+    }
 }
