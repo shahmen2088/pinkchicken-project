@@ -196,34 +196,6 @@ legend {
   margin-right: 20px;
   margin-bottom: 30px;
 }
-.main .main__content__files .main__content__files__report__list {
-  display: none;
-}
-.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner .main__content__files__report__list-open-btn {
-  margin-right: 20px;
-}
-.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner h2 {
-  margin-left: 20px;
-  font-size: 18px;
-  font-weight: 600;
-}
-.main .main__content__files .main__content__files__report__list .main__content__files__report__list-ul {
-  height: 200px;
-  overflow: hidden;
-}
-.main .main__content__files .main__content__files__report__list .main__content__files__report__list-btn {
-  display: none;
-  color: #EE26C2;
-  font-size: 15px;
-  text-align: end;
-  margin-right: 20px;
-  margin-bottom: 30px;
-}
 .main .main__content__files .main__content__files__title {
   padding-left: 20px;
   padding-top: 28px;
@@ -322,6 +294,23 @@ legend {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-inner-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+}
+.main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-inner-list .main__content__office__chat-inner-list-li {
+  width: 100%;
+  min-width: 200px;
+  max-width: 541px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+  margin-right: 26px;
 }
 .main .main__content__office .main__content__office__chat .main__content__office__chat-inner .main__content__office__chat-logo {
   padding-top: 50px;
@@ -428,14 +417,14 @@ legend {
   background-color: #F4D4ED;
 }
 
-.spec__text {
+.loading__text {
   font-size: 12px;
   font-weight: 400;
   color: #525252;
   margin-left: 20px;
   margin-bottom: 5px;
 }
-.spec__text svg {
+.loading__text svg {
   margin-right: 5px;
 }
 

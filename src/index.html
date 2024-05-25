@@ -160,7 +160,28 @@
                             onclick="showMoreMediaPlans()">Показать еще</button></div>
                 </div>
 
-                <div id="report" class="main__content__files__report__list">
+                <div id="report" class="main__content__files__media__list">
+                    <div id="report__btn" class="main__content__files__media__list__inner">
+                        <h2>Отчеты</h2>
+                        <button id="report__open-btn" class="main__content__files__media__list-open-btn"
+                            onclick="closeMoreReport()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.92 15.05L13.4 8.53001C12.63 7.76001 11.37 7.76001 10.6 8.53001L4.08002 15.05"
+                                    stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="report__inner" class="main__content__files__media__list-ul">
+                        <ul id="report__inner-list"></ul>
+                    </div>
+                    <div id="report__inner-still" class="main__content__files__media__list-btn"><button
+                            onclick="showMoreReports()">Показать еще</button></div>
+                </div>
+
+                <!-- <div id="report" class="main__content__files__report__list">
                     <div id="report__btn" class="main__content__files__report__list__inner">
                         <h2>Отчеты</h2>
                         <button id="report__open-btn" class="main__content__files__report__list-open-btn"
@@ -179,7 +200,7 @@
                     <div id="report__inner-still" class="main__content__files__report__list-btn">
                         <button onclick="showMoreReports()">Показать еще</button>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div id="main__content__files__logo" class="main__content__files__logo"><svg width="256" height="314"
@@ -372,10 +393,11 @@
                                     </clipPath>
                                 </defs>
                             </svg></div>
-                        <p id="chat-box" class="main__content__office__chat-text">Это чат с администратором. Ты можешь с
+                        <p class="main__content__office__chat-text">Это чат с администратором. Ты можешь с
                             ним
                             пообщаться по
                             любому вопросу о нашем сервисе и узнать о ходе работы</p>
+                            <ul id="main__content__office__chat-inner-list" class="main__content__office__chat-inner-list"></ul>
                         <div class="main__content__office__chat-btns">
                             <button onclick="requestMediaPlan()" class="main__content__office__chat-btn purple">Заказать
                                 медиаплан</button>
@@ -401,7 +423,6 @@
                                                 stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>
-
                                     </button>
                                     <button><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -420,8 +441,6 @@
                                     </button>
                                 </div>
                                 <div class="main__content__office__chat__inner-btn">
-
-
                                     <button onclick="sendMessage()"> <svg width="50" height="50" viewBox="0 0 50 50"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="25" cy="25" r="25" fill="#EE26C2" />
@@ -432,11 +451,9 @@
                                             <path d="M23.11 26.65L26.69 23.06" stroke="white" stroke-width="1.5"
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-
                                     </button>
                                     <span>Enter</span>
                                 </div>
-
                             </div>
                         </div>
                     </div>
