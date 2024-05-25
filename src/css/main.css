@@ -196,65 +196,52 @@ legend {
   font-size: 18px;
   font-weight: 600;
 }
+.main .main__content__files .main__content__files__media__list .main__content__files__media__list-ul {
+  height: 200px;
+  overflow: hidden;
+}
+.main .main__content__files .main__content__files__media__list .main__content__files__media__list-btn {
+  display: none;
+  color: #EE26C2;
+  font-size: 15px;
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.main .main__content__files .main__content__files__report__list {
+  display: none;
+}
+.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner .main__content__files__report__list-open-btn {
+  margin-right: 20px;
+}
+.main .main__content__files .main__content__files__report__list .main__content__files__report__list__inner h2 {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.main .main__content__files .main__content__files__report__list .main__content__files__report__list-ul {
+  height: 200px;
+  overflow: hidden;
+}
+.main .main__content__files .main__content__files__report__list .main__content__files__report__list-btn {
+  display: none;
+  color: #EE26C2;
+  font-size: 15px;
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
 .main .main__content__files .main__content__files__title {
   padding-left: 20px;
   padding-top: 28px;
   font-weight: 600;
   font-size: 24px;
   margin-bottom: 46px;
-}
-.main .main__content__files .main__content__files__media__list-btn {
-  display: none;
-  color: #EE26C2;
-  font-size: 15px;
-  text-align: end;
-  margin-right: 20px;
-  margin-bottom: 30px;
-}
-.main .main__content__files .main__content__files__list-report-stillText {
-  display: none;
-  color: #EE26C2;
-  font-size: 15px;
-  text-align: end;
-  margin-right: 20px;
-  margin-bottom: 30px;
-}
-.main .main__content__files .main__content__files__media__list-ul {
-  height: 296px;
-  overflow: hidden;
-}
-.main .main__content__files .main__content__files__media__list-ul .main__content__files__list__list {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-.main .main__content__files .main__content__files__media__list-ul .main__content__files__list__list h2 {
-  font-size: 18px;
-  font-weight: 600;
-}
-.main .main__content__files .main__content__files__media__list-ul .main__content__files__list__list button {
-  transform: rotateX(180deg);
-}
-.main .main__content__files .main__content__files__list-report {
-  display: none;
-  height: 246px;
-  overflow: hidden;
-}
-.main .main__content__files .main__content__files__list-report .main__content__files__list__list {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-.main .main__content__files .main__content__files__list-report .main__content__files__list__list h2 {
-  font-size: 18px;
-  font-weight: 600;
-}
-.main .main__content__files .main__content__files__list-report .main__content__files__list__list button {
-  transform: rotateX(180deg);
 }
 .main .main__content__files .main__content__files__logo {
   margin-bottom: 30px;

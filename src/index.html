@@ -95,7 +95,7 @@
             <div class="main__content__files">
                 <h2 class="main__content__files__title">Файлы</h2>
                 <div id="media" class="main__content__files__media__list">
-                    <div class="main__content__files__media__list__inner">
+                    <div id="media__btn" class="main__content__files__media__list__inner">
                         <h2>Медиапланы</h2>
                         <button id="media__open-btn" class="main__content__files__media__list-open-btn"
                             onclick="closeMoreMediaPlans()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -115,10 +115,11 @@
                             onclick="showMoreMediaPlans()">Показать еще</button></div>
                 </div>
 
-                <div id="report" class="main__content__files__list-report">
-                    <div id="report__inner" class="main__content__files__list__list">
+                <div id="report" class="main__content__files__report__list">
+                    <div id="report__btn" class="main__content__files__report__list__inner">
                         <h2>Отчеты</h2>
-                        <button><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <button id="report__open-btn" class="main__content__files__report__list-open-btn"
+                            onclick="closeMoreReport()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M19.92 15.05L13.4 8.53001C12.63 7.76001 11.37 7.76001 10.6 8.53001L4.08002 15.05"
@@ -127,11 +128,14 @@
                             </svg>
                         </button>
                     </div>
-                    <ul id="report__inner-list"></ul>
+                    <div id="report__inner" class="main__content__files__report__list-ul">
+                        <ul id="report__inner-list"></ul>
+                    </div>
+                    <div id="report__inner-still" class="main__content__files__report__list-btn">
+                        <button onclick="showMoreReports()">Показать еще</button>
+                    </div>
                 </div>
-                <div id="report__inner-still" class="main__content__files__list-report-stillText">
-                    <button onclick="showMoreReports()">Показать еще</button>
-                </div>
+               
 
                 <div id="main__content__files__logo" class="main__content__files__logo"><svg width="256" height="314"
                         viewBox="0 0 256 314" fill="none" xmlns="http://www.w3.org/2000/svg">

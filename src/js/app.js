@@ -1,9 +1,9 @@
 function createItemForList() {
-    let div = document.createElement('div')
+    let li = document.createElement('li')
     let paragraph = document.createElement('p');
     let xmlSvg = document.createElement('div');
     let button = document.createElement('button');
-    div.className = 'mediaPlan__item';
+    li.className = 'mediaPlan__item';
     paragraph.className = 'mediaPlan__item-text';
     paragraph.innerHTML = 'Companyname 10/23';
     xmlSvg.className = 'mediaPlan__item-xmlLogo';
@@ -21,10 +21,10 @@ function createItemForList() {
     <path d="M2 12C2 17.52 6.48 22 12 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
     </svg>
     `;
-    div.append(xmlSvg)
-    div.append(paragraph)
-    div.append(button)
-    return div;
+    li.append(xmlSvg)
+    li.append(paragraph)
+    li.append(button)
+    return li;
 }
 
 
@@ -55,22 +55,30 @@ function requestMediaPlan() {
     </span>Медиаплан в процессе составления`;
     specText.className = 'spec__text';
     mediaList.appendChild(createItemForList());
-    mediaList.appendChild(specText);
+    media.appendChild(specText);
     let arr = Array.from(mediaList.children);
-    for(let mediaListItem of arr) {
+    for (let mediaListItem of arr) {
         setTimeout(() => {
             mediaListItem.children[2].innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            `;
+            mediaListItem.children[2].style.backgroundColor = '#F4D4ED'
+            specText.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8Z" fill="#1CC437"/>
+            <path d="M3.83333 7.375L5.64226 9.1387C6.41901 9.89604 7.65791 9.89604 8.43466 9.1387L12.1667 5.5" stroke="white" stroke-width="1.5"/>
             </svg>
-        `;
-        mediaListItem.children[2].style.backgroundColor = '#F4D4ED' 
-        specText.style.display = 'none';
+            Медиаплан от 1.06.22 готов`;
+            setTimeout(() => {
+            specText.style.display = 'none';
 
-        }, 5000)
+            }, 2000)
+        }, 2000)
     }
-    if (arr.length > 5 && media.style.overflow !== 'scroll') {
+    if (arr.length > 3 && media.style.overflow !== 'scroll') {
+        console.log(arr);
         stillText.style.display = 'block';
     } else {
         stillText.style.display = 'none';
@@ -80,28 +88,57 @@ function requestMediaPlan() {
 
 function requestReport() {
     let stillText = document.querySelector('#report__inner-still');
+    let report = document.querySelector('#report__inner');
     text.style.display = 'none';
     logo.style.display = 'none';
-    document.querySelector('#report').style.display = "block";
-    let mediaList = document.querySelector('#report__inner-list');
-    mediaList.appendChild(createItemForList());
-    let arr = Array.from(mediaList.children);
-    if (arr.length > 3) {
-        stillText.style.display = 'block';
+    document.querySelector('#report').style.display = 'block';
+    let reportList = document.querySelector('#report__inner-list');
+    let specText = document.createElement('div');
+    specText.innerHTML = `<span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.26136 10.2727L8.34659 4H7.1875L7.27273 10.2727H8.26136ZM7.22585 12.5696C7.37642 12.7202 7.55682 12.7955 7.76705 12.7955C7.90909 12.7955 8.03693 12.7614 8.15057 12.6932C8.26705 12.6222 8.35938 12.5284 8.42756 12.4119C8.49858 12.2955 8.53409 12.1676 8.53409 12.0284C8.53409 11.8182 8.45881 11.6378 8.30824 11.4872C8.15767 11.3366 7.97727 11.2614 7.76705 11.2614C7.55682 11.2614 7.37642 11.3366 7.22585 11.4872C7.07528 11.6378 7 11.8182 7 12.0284C7 12.2386 7.07528 12.419 7.22585 12.5696Z" fill="#949494"/>
+    </svg>
+    </span>Медиаплан в процессе составления`;
+    specText.className = 'spec__text';
+    reportList.appendChild(createItemForList());
+    report.appendChild(specText);
+    let arr = Array.from(reportList.children);
+    for (let reportListItem of arr) {
+        setTimeout(() => {
+            reportListItem.children[2].innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            `;
+            reportListItem.children[2].style.backgroundColor = '#F4D4ED'
+            specText.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8Z" fill="#1CC437"/>
+            <path d="M3.83333 7.375L5.64226 9.1387C6.41901 9.89604 7.65791 9.89604 8.43466 9.1387L12.1667 5.5" stroke="white" stroke-width="1.5"/>
+            </svg>
+            Медиаплан от 1.06.22 готов`;
+            setTimeout(() => {
+            specText.style.display = 'none';
+
+            }, 2000)
+        }, 2000)
     }
+    if (arr.length > 3 && report.style.overflow !== 'scroll') {
+        console.log(arr);
+        stillText.style.display = 'block';
+    } else {
+        stillText.style.display = 'none';
+    }
+    document.querySelector('#report').style.display = "block";
 }
 
-function showMoreReports () {
+function showMoreReports() {
     let stillText = document.querySelector('#report__inner-still');
-    let report = document.querySelector('#report');
-    let otherReport = document.querySelector('#report__inner-list');
-
-    otherReport .style.overflow = 'scroll';
-
+    let report = document.querySelector('#report__inner');
     stillText.style.display = 'none';
+    report.style.overflow = 'scroll';
 }
 
-function showMoreMediaPlans () {
+function showMoreMediaPlans() {
     let stillText = document.querySelector('#media__inner-still');
     let media = document.querySelector('#media__inner');
     stillText.style.display = 'none';
@@ -109,17 +146,32 @@ function showMoreMediaPlans () {
 }
 
 
-function closeMoreMediaPlans () {
+function closeMoreMediaPlans() {
     let media = document.querySelector('#media__inner');
     let btn = document.querySelector("#media__open-btn");
-    if(btn.style.transform === '') {
+    if (btn.style.transform === '') {
         btn.style.transform = "rotateX(180deg)";
     } else {
         btn.style.transform = "";
     }
-    if(media.style.display === 'none') {
+    if (media.style.display === 'none') {
         media.style.display = 'block';
     } else {
         media.style.display = 'none';
+    }
+}
+
+function closeMoreReport () {
+    let report = document.querySelector('#report__inner');
+    let btn = document.querySelector("#report__open-btn");
+    if (btn.style.transform === '') {
+        btn.style.transform = "rotateX(180deg)";
+    } else {
+        btn.style.transform = "";
+    }
+    if (report.style.display === 'none') {
+        report.style.display = 'block';
+    } else {
+        report.style.display = 'none';
     }
 }
