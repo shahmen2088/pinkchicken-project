@@ -1,3 +1,6 @@
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 376px;
+
 .footer {
     background-color: #EBEBEB;
     margin-top: auto;
@@ -59,7 +62,7 @@
         display: flex;
         font-size: 35px;
 
-        a: {
+        a {
             width: 40px;
             height: 40px;
         }
@@ -70,4 +73,33 @@
         }
     }
 
+}
+
+
+@media (max-width: $breakpoint-phone) { 
+    .footer {
+        width: 375px;
+        overflow: hidden;
+        .footer__container {
+            .footer__logo {
+                padding-left: 0;
+            }
+
+            width: 375px;
+            flex-wrap: wrap;
+            .footer__menu {
+                flex-wrap: wrap;
+                .footer__menu-item {
+                    margin-bottom: 20px;
+                }
+            }
+            .footer__social-icons {
+                margin-bottom: 40px;
+            }
+        }
+
+       
+
+    }
+    
 }

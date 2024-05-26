@@ -1,3 +1,7 @@
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 376px;
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -9,6 +13,9 @@
     padding: 0 15px;
     margin: 0 auto;
 
+   
+
+
     .header__user__nav {
         display: flex;
     }
@@ -16,6 +23,7 @@
     .header__user-info {
         display: flex;
         align-items: center;
+        
     }
 
     .header__user-info-info {
@@ -73,4 +81,49 @@
         }
     }
 
+}
+
+
+@media (max-width: $breakpoint-phone) {
+    .header {
+        flex-direction: column;
+        align-items: normal;
+        height: auto;
+        .header__user-info-name-info-person,
+        .header__user-info-info-logo {
+            display: none;
+        }
+
+        .header__logo {
+            padding-top: 28px;
+            padding-bottom: 20px;
+        }
+        
+        .header__user__nav {
+            align-items: center;
+        }
+        .header__user-info {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            .header__user-info-info {
+                .header__user-info-info-percent {
+                    color: #797979;
+                    
+                    font-size: 12px;
+                    font-weight: 400;
+                    &::after {
+                        content: 'выручки';
+                        margin-left: 5px;
+                    }
+
+                }
+            }
+            .header__user-info-name {
+                .header__user-info-name-email {
+                    font-size: 16px;
+                }
+            }
+           
+        }
+    }
 }

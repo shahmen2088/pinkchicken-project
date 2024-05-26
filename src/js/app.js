@@ -58,37 +58,68 @@ function createItemForList() {
 }
 
 
+let ul = document.querySelector('#main__content__office__chat-inner-list');
+let content = document.querySelector('#main__content__office__chat-inner');
 
 function sendMessage() {
-    let ul = document.querySelector('#main__content__office__chat-inner-list');
-    let content = document.querySelector('#main__content__office__chat-inner');
     let message = document.getElementById("message").value;
     let liMessage = document.createElement('li');
     let currentDate = new Date().toLocaleString('ru', { hour: 'numeric', minute: 'numeric' })
     liMessage.className = 'main__content__office__chat-inner-list-li';
-    liMessage.innerHTML = message;
+
+    let messageText = document.createElement('div');
+    messageText.className = 'main__content__office__chat-inner-list-li-text';
+    messageText.innerText = message;
+
+
     let date = document.createElement('p');
     date.innerHTML = `${currentDate}`;
-    console.log(date);
 
+    liMessage.appendChild(messageText)
     liMessage.appendChild(date);
+    console.log(liMessage);
+    requestAnswer().then(v=> {
+        setTimeout(() => {
+            ul.appendChild(v);
+        }, 3000)
+        
+    });
 
-
-    if (message.trim() !== "") {
+    if (message.trim()) {
         ul.appendChild(liMessage);
         document.getElementById("message").value = "";
         content.style.overflow = 'scroll';
     }
 }
 
-let logo = document.querySelector('#main__content__files__logo');
-let text = document.querySelector('#main__content__files__description');
+async function requestAnswer() {
+    const liForAnswer = document.createElement('li');
+    liForAnswer.className = 'main__content__office__chat-inner-list-li-answer';
+    let date = document.createElement('p');
+    let currentDate = new Date().toLocaleString('ru', { hour: 'numeric', minute: 'numeric' })
+
+    date.innerHTML = `${currentDate}`;
+
+    let messageText = document.createElement('div');
+    messageText.className = 'main__content__office__chat-inner-list-li-text';
+    fetch(`https://jsonplaceholder.typicode.com/comments/${Math.round(Math.random() * 501)}`).then(v => v.json()).then(v => 
+        messageText.innerText = v.body
+    );
+    liForAnswer.appendChild(messageText);
+    liForAnswer.appendChild(date);
+
+    return liForAnswer;
+}
+
+
 
 
 
 const stillText = document.querySelector('#media__inner-still');
 const media = document.querySelector('#media__inner');
 const mediaList = document.querySelector('#media__inner-list');
+const logo = document.querySelector('#main__content__files__logo');
+const text = document.querySelector('#main__content__files__description');
 
 
 function requestMediaPlan() {
